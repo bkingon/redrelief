@@ -1,4 +1,19 @@
 Redrelief::Application.routes.draw do
+  
+  authenticated :user do
+    root :to => 'home#index'
+  end
+  root :to => "home#index"
+  devise_for :users
+  resources :users
+  resources :regions
+  
+  resources :projects do
+    resources :needs do
+      resources :donations  
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

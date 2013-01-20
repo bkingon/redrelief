@@ -1,0 +1,16 @@
+<%= form_for [:project, @need] do |f| %>
+	<%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %><br />
+
+  <%= f.label :description %>
+  <%= f.text_area :description %><br />
+
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %><br />
+
+  <%= f.label :donation_id %>
+  <%= f.text_field :donation_id %><br />
+
+  <%= f.submit %>
+
+<% end %>

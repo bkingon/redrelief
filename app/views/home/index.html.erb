@@ -1,0 +1,6 @@
+<!-- <div align="stretch"><img src="/images/Banner.jpg" STYLE="width:100%" /></div> -->
+
+
+<% @users.each do |user| %>
+	<p> User: <%= link_to user.name, user %> </p>
+<% end %>

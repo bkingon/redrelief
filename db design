@@ -1,0 +1,48 @@
+Projects:
+ID
+Name
+Date Created
+Date Modified
+Need level
+Project Manager
+Region ID(Area or nationwide)
+Description
+needs
+
+Donations:
+ID
+Project ID
+User ID
+Date Created
+Procurement
+Description
+Quantity
+
+Needs:
+Name
+Description
+Quantity
+Project_ID
+Donation_ID
+
+
+Regions:
+region_id
+Country
+Province/state
+Town/City
+Area
+
+
+<!-- <h2>Project</h2>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+<%= form_for @project do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :manger_id %>
+  <%= f.input :need_level %>
+  <%= f.input :need_list %>
+  <%= f.input :region_id %>
+  <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
+<% end %>
+ -->

@@ -1,0 +1,43 @@
+<h3>Projects</h3>
+<% if @projects.count >0 %>
+<div class="span100">
+<% if can? :create, @project %>
+	<p><%= link_to "New Project", new_project_path %></p>
+<% end %>
+<table class="table table-condensed">
+    <thead>
+      <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th>Created On</th>
+          <th>Need Level</th>
+          <th>Manager</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr>
+        <td><%= link_to project.name, project %></td>
+        <td><%= project.description %></td>
+        <td><%= project.created_at.to_date %></td>
+        <td><%= project.need_level.to_s %></td>
+        <td><%= project.manager_id.to_s %></td>
+        <% if can? :destroy, project %>
+        <td><%= link_to("Delete project", project_path(project), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') %></td>
+        <% end %>
+        <% if can? :update, project %>
+        <td><%= link_to "Edit project", [:edit, project], :class => 'btn btn-mini' %></td>
+        <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>
+<% if can? :create, @project %>
+	<p><%= link_to "New Project", new_project_path %></p>
+<% end %>
+</div>
+
+

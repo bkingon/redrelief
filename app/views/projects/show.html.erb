@@ -1,0 +1,48 @@
+<h3>Project: <%= @project.name %></h3>
+<div class="span8">
+	<p>Manager: <%= @project.manager_id %>   Need Level: <%= @project.need_level %> Region: <%= @project.region_id %></p>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Need</th>
+				<th>Total Quantity Needed</th>
+				<th>Quantity Remaining</th>
+				<th>Date Listed</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @project.needs.each do |need| %>
+				<tr>
+					<td><%= need.name %></td>
+					<td><%= need.quantity %></td>
+					<td><%= need.name %></td>
+					<td><%= need.created_at %></td>
+					<td><%= link_to "Delete need", [@project, need], method: :delete, confirm: "Are you absolutely insanely sure?", class: 'btn btn-mini' %></td>
+	        <% if can? :update, need %>
+	        	<td><%= link_to "Edit need", [:edit, @project, need], :class => 'btn btn-mini' %></td>
+	        <% end %>
+	      </tr>
+			<% end %> 
+
+		</tbody>
+	</table>
+	<p><%= link_to "Add Need", [:new, @project, :need] %></p>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Donation Type</th>
+				<th>Quantity</th>
+				<th>User</th>
+				<th>Date</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+</div>
+
